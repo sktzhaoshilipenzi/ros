@@ -1,0 +1,8 @@
+prefix=/home/cuicheng/work/devel
+
+Name: opencvyi
+Description: Description of opencvyi
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/cuicheng/work/devel/lib 
+Requires: cv_bridge image_transport roscpp rospy sensor_msgs std_msgs
