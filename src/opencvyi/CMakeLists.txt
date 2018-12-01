@@ -208,3 +208,7 @@ add_executable(my_subscriber src/duqu.cpp)
 target_link_libraries(my_subscriber ${catkin_LIBRARIES}   ${OpenCV_LIBS} driver util)
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+add_executable(my_subscriber2 src/duqu2.cpp)
+target_link_libraries(my_subscriber2 ${catkin_LIBRARIES}   ${OpenCV_LIBS} )
+add_executable(my_subscriber3 src/daqu3.cpp)
+target_link_libraries(my_subscriber3 ${catkin_LIBRARIES}   ${OpenCV_LIBS} )

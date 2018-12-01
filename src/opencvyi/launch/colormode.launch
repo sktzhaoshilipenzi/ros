@@ -1,7 +1,8 @@
 <launch>
-	<!--param参数配置目前只读取是否保存录像 由于不能在hpp文件定义ros节点 今后会考虑其他额外参数直接在节点中读取-->
+	<!--param参数配置目前读取是否保存录像,红蓝模式以及阈值 由于不能在hpp文件定义ros节点 今后会考虑其他额外参数直接在节点中读取-->
 	<param name="enemy_color" value="0" />
 	<param name="show_image" value="0" />
+	<param name="exposure_time" value="50" />
     <param name="save_result" value="0" />
 	<param name="light_threshold_val" value="200" />
     <param name="red_color_diff" value="40" />
@@ -25,13 +26,15 @@
     <param name="armor_max_pixel_val" value="100.0" />
 	<param name="armor_max_stddev" value="40" />
     <param name="width" value="40" />
-	<param name="height" value="50" />
-	<param name="exposure_time" value="100" />	
+	<param name="height" value="50" />	
 	<param name="ptz_camera_x" value="0" />
     <param name="ptz_camera_y" value="5" />
 	<param name="ptz_camera_z" value="17.5" />
     <param name="barrel_ptz_offset_y" value="0" />
-	<param name="z_scale" value="1" />			
+	<param name="z_scale" value="1" />	
+	<param name="usb_cam_id" value="/dev/video0" />			
 	<node pkg="opencvyi" type="my_publisher" name="my_publisher" output="screen" />
-	<node pkg="opencvyi" type="my_subscriber" name="my_subscriber" output="screen" />
+	<!--node pkg="opencvyi" type="my_subscriber" name="my_subscriber" output="screen" /-->
+	<node pkg="opencvyi" type="my_subscriber2" name="my_subscriber2" output="screen" />
+	<node pkg="opencvyi" type="my_subscriber3" name="my_subscriber3" output="screen" />
 </launch>
