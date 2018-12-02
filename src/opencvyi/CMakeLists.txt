@@ -127,6 +127,8 @@ include_directories(
 
 add_subdirectory( src/driver )
 add_subdirectory( src/utility )
+add_subdirectory( src/detect_factory )
+add_subdirectory( src/slover )
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/opencvyi.cpp
@@ -211,4 +213,4 @@ target_link_libraries(my_subscriber ${catkin_LIBRARIES}   ${OpenCV_LIBS} driver 
 add_executable(my_subscriber2 src/duqu2.cpp)
 target_link_libraries(my_subscriber2 ${catkin_LIBRARIES}   ${OpenCV_LIBS} )
 add_executable(my_subscriber3 src/daqu3.cpp)
-target_link_libraries(my_subscriber3 ${catkin_LIBRARIES}   ${OpenCV_LIBS} )
+target_link_libraries(my_subscriber3 ${catkin_LIBRARIES}   ${OpenCV_LIBS} driver util slover detector )

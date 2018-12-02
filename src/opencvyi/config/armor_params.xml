@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <opencv_storage>
     <!--Parameter for Enemy Color, 0(default) means for red, otherwise blue-->
-    <enemy_color>1</enemy_color>
+    <enemy_color>0</enemy_color>
     <video_id>../video/123.MOV</video_id>
 
     <!--Parameter for Debug--> 

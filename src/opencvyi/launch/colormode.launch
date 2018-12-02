@@ -35,6 +35,6 @@
 	<param name="usb_cam_id" value="/dev/video0" />			
 	<node pkg="opencvyi" type="my_publisher" name="my_publisher" output="screen" />
 	<!--node pkg="opencvyi" type="my_subscriber" name="my_subscriber" output="screen" /-->
-	<node pkg="opencvyi" type="my_subscriber2" name="my_subscriber2" output="screen" />
+	<!--node pkg="opencvyi" type="my_subscriber2" name="my_subscriber2" output="screen" /-->
 	<node pkg="opencvyi" type="my_subscriber3" name="my_subscriber3" output="screen" />
 </launch>

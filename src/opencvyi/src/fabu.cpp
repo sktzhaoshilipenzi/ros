@@ -9,7 +9,7 @@
 #include "video_recoder.hpp"
 using namespace cv;
 using namespace std;
-//#define USE_VIDEO
+#define USE_VIDEO
 bool open_camera(cv::VideoCapture & capture_camera_forward )
 {   std::string usb_cam_id;
     int exposure_time ;
@@ -54,7 +54,7 @@ int saveframe;
 	}
 #else
      VideoCapture cap;
-    cap.open("/home/cuicheng/work/src/opencvyi/video/123.MOV");
+    cap.open("/home/cuicheng/work/src/opencvyi/video/test.avi");
     if (!cap.isOpened()) {
 		std::cerr << "ERROR! Unable to open video\n";
 		return -1;
