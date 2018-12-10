@@ -12,7 +12,7 @@
 #include "armor_info.hpp"
 #include <chrono>
 #include <vector>
-/*autocar::driver::camera_driver camera_info;
+/*autocar::driver::camera_driver camera_inf o;
 AngleSolver angle_slover(camera_info.camera_matrix, camera_info.dist_coeffs, 21.6, 5.4, camera_info.z_scale);
 AngleSolverFactory angle_slover_factory(&angle_slover);
 /*autocar::driver::camera_driver camera_info;
