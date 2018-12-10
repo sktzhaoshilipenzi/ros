@@ -139,7 +139,11 @@ void ArmorDetector::DetectLights(const cv::Mat &src, std::vector<cv::RotatedRect
 	std::vector<cv::Mat> bgr_channel;
 	cv::split(src, bgr_channel);
 	
+<<<<<<< HEAD
 	if (_para.enemy_color == 0)
+=======
+	if (_para.enemy_color == RED)
+>>>>>>> def115a31aa4ffdd4f2f5f7e9bd63a0e42d21992
 		cv::subtract(bgr_channel[2], bgr_channel[1], color_light);
 	else
 		cv::subtract(bgr_channel[0], bgr_channel[1], color_light);
@@ -155,7 +159,11 @@ void ArmorDetector::DetectLights(const cv::Mat &src, std::vector<cv::RotatedRect
   	cv::threshold(gray_img_, binary_brightness_img, _para.light_threshold_val, 255, CV_THRESH_BINARY);  //200
   	//TODO(noah.guo): param
   	float thresh;
+<<<<<<< HEAD
  	if (_para.enemy_color == 1) // 这里对快速移动依然有影响
+=======
+ 	if (_para.enemy_color == BLUE) // 这里对快速移动依然有影响
+>>>>>>> def115a31aa4ffdd4f2f5f7e9bd63a0e42d21992
    	 	thresh = _para.blue_color_diff;
   	else
     	thresh = _para.red_color_diff;  //50
