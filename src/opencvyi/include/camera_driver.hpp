@@ -27,7 +27,6 @@ public:
     camera_driver()
     {
         camera_mat_file = "/home/cuicheng/work/src/opencvyi/config/480P_120_RH.xml";
-<<<<<<< HEAD
             cv::FileStorage fs(camera_mat_file, cv::FileStorage::READ);
     if(!fs.isOpened())
         std::cout << "Cannot open [" << camera_mat_file << "], please check if the file is exist." << std::endl;
@@ -56,8 +55,6 @@ public:
     cv::Mat r(3,3, CV_64FC1, r_data); // Mat::eye(3, 3, CV_64FC1);
     t.copyTo(t_camera_ptz);
     r.copyTo(r_camera_ptz);
-=======
->>>>>>> def115a31aa4ffdd4f2f5f7e9bd63a0e42d21992
     }
     /**
      * @brief Read vision paramaters, such as camera matrix, Distortion matrix and so on.

@@ -9,7 +9,6 @@
 #include "video_recoder.hpp"
 using namespace cv;
 using namespace std;
-<<<<<<< HEAD
 //#define USE_VIDEO
 bool open_camera(cv::VideoCapture & capture_camera_forward )
 {   std::string usb_cam_id;
@@ -17,13 +16,6 @@ bool open_camera(cv::VideoCapture & capture_camera_forward )
 
     capture_camera_forward.set(CV_CAP_PROP_FPS,120);
 
-=======
-#define USE_VIDEO
-bool open_camera(cv::VideoCapture & capture_camera_forward )
-{   std::string usb_cam_id;
-    int exposure_time ;
-    capture_camera_forward.set(CV_CAP_PROP_FPS,120);
->>>>>>> def115a31aa4ffdd4f2f5f7e9bd63a0e42d21992
     bool ifget2 = ros::param::get("usb_cam_id",usb_cam_id);
     bool ifget3 = ros::param::get("exposure_time",exposure_time);
     if (ifget2==1&&ifget3==1)
@@ -64,11 +56,7 @@ int saveframe;
 	}
 #else
      VideoCapture cap;
-<<<<<<< HEAD
     cap.open("/home/cuicheng/work/src/opencvyi/video/123.MOV");
-=======
-    cap.open("/home/cuicheng/work/src/opencvyi/video/test.avi");
->>>>>>> def115a31aa4ffdd4f2f5f7e9bd63a0e42d21992
     if (!cap.isOpened()) {
 		std::cerr << "ERROR! Unable to open video\n";
 		return -1;
@@ -105,11 +93,7 @@ int saveframe;
      frame->header.stamp = ros::Time::now();
        
          pub.publish(frame->toImageMsg());
-<<<<<<< HEAD
          cv::waitKey( 3 );
-=======
-         cv::waitKey( 30 );
->>>>>>> def115a31aa4ffdd4f2f5f7e9bd63a0e42d21992
          ros::spinOnce();
          }
     cap.release();

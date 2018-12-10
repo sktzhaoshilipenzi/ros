@@ -142,10 +142,7 @@ public:
 
     bool getAngle(const cv::RotatedRect & rect, TargetType type, double & angle_x, double & angle_y, double bullet_speed, const cv::Point2f & offset = cv::Point2f());
     bool getAngle_rect(const cv::Rect & rect, TargetType type, double & angle_x, double & angle_y, double bullet_speed, const cv::Point2f & offset = cv::Point2f());
-<<<<<<< HEAD
     AngleSolver * slover;
-=======
->>>>>>> def115a31aa4ffdd4f2f5f7e9bd63a0e42d21992
 private:
     double armor_width;
     double armor_height;
@@ -153,11 +150,7 @@ private:
     double small_armor_height;
     double rune_width;
     double rune_height;
-<<<<<<< HEAD
     
-=======
-    AngleSolver * slover;
->>>>>>> def115a31aa4ffdd4f2f5f7e9bd63a0e42d21992
 };
 class km {
     public:

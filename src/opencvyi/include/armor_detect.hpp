@@ -28,11 +28,6 @@ namespace autocar
 {
 namespace vision_mul
 {
-<<<<<<< HEAD
-
-=======
-enum EnemyColor { RED = 0, BLUE = 1};
->>>>>>> def115a31aa4ffdd4f2f5f7e9bd63a0e42d21992
 
 class ArmorDetector
 {
@@ -93,11 +88,7 @@ private:
 	cv::Mat DistillationColor(const cv::Mat &src_img, unsigned int color) {
 		std::vector<cv::Mat> bgr_channel;
 		cv::split(src_img, bgr_channel);
-<<<<<<< HEAD
 		if (color == 0) {
-=======
-		if (color == RED) {
->>>>>>> def115a31aa4ffdd4f2f5f7e9bd63a0e42d21992
 			cv::Mat result_img;
 			cv::subtract(bgr_channel[2], bgr_channel[1], result_img);
 			return result_img;
