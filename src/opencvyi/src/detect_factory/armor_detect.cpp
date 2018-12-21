@@ -1049,26 +1049,27 @@ float qq;
 		if(is_armor[i]) filte_rects.push_back(armors[i]);
 	}
 	armors = filte_rects;
-	std::vector<bool> are_armor(armors.size(), true);
-	is_armor.clear();
-	for(int i=0;i<armors.size();i++){is_armor[i]=true;}
-	for (int i = 0; i < armors.size(); i++) {
+	//std::vector<bool> are_armor(armors.size(), true);
+	//is_armor.clear();
+	//for(int i=0;i<armors.size();i++){is_armor[i]=true;}
+	//for (int i = 0; i < armors.size(); i++) {
 		//printf("第%d个",i);
-	        qq=hhh(armors[i].rect);
+	//        qq=hhh(armors[i].rect);
 	//printf("qqqqqqqqqq%f",qq);
-		    if(qq<0.3){are_armor[i]=false;}
-		   }
+	//	    if(qq<0.3){are_armor[i]=false;}
+	//	   }
 
 	
 	
-	for( int i = 0; i < are_armor.size();++i)
-	{
-		if(are_armor[i]) filte_rects2.push_back(armors[i]);
-	}
+	//for( int i = 0; i < are_armor.size();++i)
+	//{
+	//	if(are_armor[i]) filte_rects2.push_back(armors[i]);
+	//}
 	
-	armors = filte_rects2;
-	are_armor.clear();
-	filte_rects2.clear();
+	//armors = filte_rects2;
+	//are_armor.clear();
+	//filte_rects2.clear();
+	
   	// speed_test_end("FilterArmor 用时 = ", "ms");
 }
 

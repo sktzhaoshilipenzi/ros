@@ -1,5 +1,6 @@
 <launch>
-	<!--param参数配置目前读取是否保存录像,红蓝模式以及阈值 由于不能在hpp文件定义ros节点 今后会考虑其他额外参数直接在节点中读取-->
+	<!--param参数配置目前读取是否保存录像 save_result
+	exposure_time usbcam_id 其他的都是摆设 由于不能在hpp文件定义ros节点 今后会考虑其他额外参数直接在节点中读取-->
 	<param name="enemy_color" value="1" />
 	<param name="show_image" value="0" />
 	<param name="exposure_time" value="50" />

@@ -8,17 +8,24 @@ SET( CMAKE_CXX_FLAGS "-std=c++11 -pthread")
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+ message_generation
   cv_bridge
   image_transport
   roscpp
   rospy
   sensor_msgs
   std_msgs
+  
 )
 find_package(OpenCV REQUIRED)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
+ add_message_files(
+   FILES
+   position.msg
+#   Message2.msg
+ )
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -95,7 +102,10 @@ find_package(OpenCV REQUIRED)
 #   cfg/DynReconf1.cfg
 #   cfg/DynReconf2.cfg
 # )
-
+ generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 ###################################
 ## catkin specific configuration ##
 ###################################
@@ -108,7 +118,7 @@ find_package(OpenCV REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES opencvyi
-  CATKIN_DEPENDS cv_bridge image_transport roscpp rospy sensor_msgs std_msgs
+  CATKIN_DEPENDS cv_bridge image_transport roscpp rospy sensor_msgs std_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -129,6 +139,7 @@ add_subdirectory( src/driver )
 add_subdirectory( src/utility )
 add_subdirectory( src/detect_factory )
 add_subdirectory( src/slover )
+add_subdirectory( src/common )
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/opencvyi.cpp
@@ -213,4 +224,8 @@ target_link_libraries(my_subscriber ${catkin_LIBRARIES}   ${OpenCV_LIBS} driver 
 add_executable(my_subscriber2 src/duqu2.cpp)
 target_link_libraries(my_subscriber2 ${catkin_LIBRARIES}   ${OpenCV_LIBS} )
 add_executable(my_subscriber3 src/daqu3.cpp)
+add_dependencies(my_subscriber3 opencvyi_generate_messages_cpp)
 target_link_libraries(my_subscriber3 ${catkin_LIBRARIES}   ${OpenCV_LIBS} driver util slover detector )
+add_executable(pb src/currentyawpub.cpp )
+add_dependencies(pb opencvyi_generate_messages_cpp)
+target_link_libraries(pb ${catkin_LIBRARIES} driver util slover detector common)

@@ -14,7 +14,7 @@ bool open_camera(cv::VideoCapture & capture_camera_forward )
 {   std::string usb_cam_id;
     int exposure_time ;
 
-    capture_camera_forward.set(CV_CAP_PROP_FPS,120);
+    
 
     bool ifget2 = ros::param::get("usb_cam_id",usb_cam_id);
     bool ifget3 = ros::param::get("exposure_time",exposure_time);
@@ -47,6 +47,7 @@ autocar::vision_mul::video_recoder recoder;
 int saveframe;
 #ifndef USE_VIDEO
    VideoCapture cap;
+   cap.set(CV_CAP_PROP_FPS,120);
     //camera_info.open_camera(cap);
    // cap.open(0);
    open_camera(cap);
@@ -56,7 +57,7 @@ int saveframe;
 	}
 #else
      VideoCapture cap;
-    cap.open("/home/cuicheng/work/src/opencvyi/video/123.MOV");
+    cap.open("/home/cuicheng/work/src/opencvyi/video/222.MOV");
     if (!cap.isOpened()) {
 		std::cerr << "ERROR! Unable to open video\n";
 		return -1;
@@ -69,6 +70,7 @@ int saveframe;
     cv_bridge::CvImagePtr frame = boost::make_shared< cv_bridge::CvImage >();
     frame->encoding = sensor_msgs::image_encodings::BGR8;
     bool ifget1 = ros::param::get("save_result", saveframe);
+    ros::Rate loop_rate(30);
     #ifdef USE_VIDEO  
     saveframe=0;
     #endif
@@ -93,7 +95,10 @@ int saveframe;
      frame->header.stamp = ros::Time::now();
        
          pub.publish(frame->toImageMsg());
-         cv::waitKey( 3 );
+         #ifdef USE_VIDEO  
+         loop_rate.sleep();
+         #endif
+         cv::waitKey( 30 );
          ros::spinOnce();
          }
     cap.release();
