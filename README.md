@@ -11,9 +11,14 @@
 ## 注意事项
  ### opencvyi文件夹里面的所有cmakelists的include目录和参数文件目录都需要改我写的是自己的绝对目录
 ## 使用方法
- ### 1 把work放到主目录下 2cd work   3 catkin_make 4  cuicheng@cuicheng-N8xEJEK:~$ echo "source ~/work/devel/setup.bash" >> ~/.bashrc
- 5  cuicheng@cuicheng-N8xEJEK:~$ source ~/.bashrc  6 roslaunch opencvyi colormode.launch 7 rosrun opencvyi pb
-**以上**
+ ### 1 把work放到主目录下 
+ ### 2 cd work   
+ ### 3 catkin_make 
+ ### 4  cuicheng@cuicheng-N8xEJEK:~$ echo "source ~/work/devel/setup.bash" >> ~/.bashrc
+ ### 5  cuicheng@cuicheng-N8xEJEK:~$ source ~/.bashrc  
+ ### 6 roslaunch opencvyi colormode.launch 
+ ### 7 rosrun opencvyi pb
+--------------------------***以上***--------------------------
  
 
  
